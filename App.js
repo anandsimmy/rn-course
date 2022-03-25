@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Button } from 'react-native';
 
 export default function App() {
   return (
@@ -7,6 +7,7 @@ export default function App() {
       <Text>
         Anand is the best! Open up App.js to start working on your app!
       </Text>
+      <Button title='Tap me!' />
       <StatusBar style='auto' />
     </View>
   );
