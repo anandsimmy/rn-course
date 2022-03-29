@@ -29,7 +29,7 @@ export default function App() {
           <View
             style={{
               height: 100,
-              width: 80,
+              width: 10,
               backgroundColor: 'green',
             }}
           >
