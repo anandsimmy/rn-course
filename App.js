@@ -29,14 +29,13 @@ export default function App() {
           <View
             style={{
               height: 100,
-              width: 10,
+              width: 100,
               backgroundColor: 'green',
             }}
           >
             <Text style={{ color: 'white' }}>Click Me</Text>
           </View>
         </TouchableWithoutFeedback>
-        <StatusBar style='auto' />
       </View>
     </TouchableWithoutFeedback>
   );
