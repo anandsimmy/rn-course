@@ -25,7 +25,7 @@ export default function App() {
         >
           Anand is the best!
         </Text>
-        <TouchableWithoutFeedback>
+        <TouchableWithoutFeedback onPress={() => alert('hello')}>
           <View
             style={{
               height: 100,
