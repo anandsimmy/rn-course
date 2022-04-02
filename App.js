@@ -23,6 +23,7 @@ const styles = StyleSheet.create({
   },
   inputWrapper: {
     flexDirection: 'row',
+    justifyContent: 'space-between',
   },
   listWrapper: {
     paddingTop: 50,
