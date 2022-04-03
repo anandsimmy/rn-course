@@ -24,6 +24,7 @@ const styles = StyleSheet.create({
   inputWrapper: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    alignItems: 'center',
   },
   listWrapper: {
     paddingTop: 50,
