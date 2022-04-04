@@ -4,8 +4,8 @@ export default function App() {
   return (
     <View style={styles.container}>
       <View style={styles.inputWrapper}>
-        <TextInput placeholder='Your goals' />
-        <Button title='Add your Goals' />
+        <TextInput style={styles.inputStyles} placeholder='Your goals' />
+        <Button title='Add Goal' />
       </View>
       <View style={styles.listWrapper}>
         <Text>List of all Goals</Text>
@@ -16,17 +16,25 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 50,
-    paddingTop: 100,
     flex: 1,
-    justifyContent: 'space-between',
+    paddingTop: 32,
+    paddingHorizontal: 24,
   },
   inputWrapper: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
     alignItems: 'center',
+    marginBottom: 36,
+    borderBottomWidth: 1,
+    borderBottomColor: '#ccc',
+  },
+  inputStyles: {
+    flex: 1,
+    borderWidth: 1,
+    borderColor: '#ccc',
+    padding: 8,
+    marginRight: 8,
   },
   listWrapper: {
-    paddingTop: 50,
+    flex: 4,
   },
 });
