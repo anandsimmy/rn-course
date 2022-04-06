@@ -1,10 +1,18 @@
 import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
 
-export default function App() {
+const App = () => {
+  const textInputHandler = (enteredText) => {
+    console.log(enteredText);
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.inputWrapper}>
-        <TextInput style={styles.inputStyles} placeholder='Your goals' />
+        <TextInput
+          style={styles.inputStyles}
+          placeholder='Your goals'
+          onChangeText={textInputHandler}
+        />
         <Button title='Add Goal' />
       </View>
       <View style={styles.listWrapper}>
@@ -12,7 +20,7 @@ export default function App() {
       </View>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -39,3 +47,5 @@ const styles = StyleSheet.create({
     flex: 4,
   },
 });
+
+export default App;
