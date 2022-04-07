@@ -11,7 +11,7 @@ const App = () => {
         <TextInput
           style={styles.inputStyles}
           placeholder='Your goals'
-          onChangeText={textInputHandler}
+          onTextInput={textInputHandler}
         />
         <Button title='Add Goal' />
       </View>
