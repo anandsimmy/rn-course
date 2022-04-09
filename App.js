@@ -1,8 +1,8 @@
 import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
 
 const App = () => {
-  const textInputHandler = (enteredText) => {
-    console.log(enteredText);
+  const textInputHandler = (event) => {
+    console.log(event);
   };
 
   return (
