@@ -13,7 +13,7 @@ const App = () => {
           placeholder='Your goals'
           onChangeText={textInputHandler}
         />
-        <Button onPress={() => {}} title='Add Goal' />
+        <Button title='Add Goal' />
       </View>
       <View style={styles.listWrapper}>
         <Text>List of all Goals</Text>
