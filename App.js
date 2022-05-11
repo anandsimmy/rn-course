@@ -29,7 +29,11 @@ const App = () => {
       <View style={styles.listWrapper}>
         <Text>List of all Goals</Text>
         {courseGoals.map((courseGoal, index) => {
-          return <Text key={index}>{courseGoal}</Text>;
+          return (
+            <Text style={styles.listItemStyles} key={index}>
+              {courseGoal}
+            </Text>
+          );
         })}
       </View>
     </View>
@@ -59,6 +63,11 @@ const styles = StyleSheet.create({
   },
   listWrapper: {
     flex: 4,
+  },
+  listItemStyles: {
+    padding: 10,
+    backgroundColor: red,
+    fontSize: 16,
   },
 });
 
