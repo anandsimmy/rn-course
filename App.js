@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
   },
   listItemStyles: {
     padding: 10,
-    backgroundColor: blue,
+    backgroundColor: 'red',
     fontSize: 16,
   },
 });
