@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
     flex: 4,
   },
   listItemStyles: {
-    padding: 10,
+    padding: 12,
     backgroundColor: 'red',
     fontSize: 16,
   },
