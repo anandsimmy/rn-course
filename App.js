@@ -32,7 +32,7 @@ const App = () => {
           return (
             <Text style={styles.listItemStyles} key={index}>
               {courseGoal}
-              {index + 2}
+              {index + 24}
             </Text>
           );
         })}
