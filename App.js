@@ -1,5 +1,12 @@
 import { useState } from 'react';
-import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  Button,
+  TextInput,
+  ScrollView,
+} from 'react-native';
 
 const App = () => {
   const [enteredGoalText, setEnteredGoalText] = useState('');
@@ -30,10 +37,9 @@ const App = () => {
         <Text>List of all Goals</Text>
         {courseGoals.map((courseGoal, index) => {
           return (
-            <Text style={styles.listItemStyles} key={index}>
-              {courseGoal}
-              {index + 6}
-            </Text>
+            <View key={index} style={styles.listItemStyles}>
+              <Text style={styles.listText}>{courseGoal}</Text>
+            </View>
           );
         })}
       </View>
@@ -66,9 +72,13 @@ const styles = StyleSheet.create({
     flex: 4,
   },
   listItemStyles: {
-    padding: 14,
-    backgroundColor: 'red',
-    fontSize: 16,
+    padding: 10,
+    margin: 6,
+    borderRadius: 6,
+    backgroundColor: '#5e0acc',
+  },
+  listText: {
+    color: 'white',
   },
 });
 
