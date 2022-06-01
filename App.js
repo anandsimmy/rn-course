@@ -34,14 +34,16 @@ const App = () => {
         <Button onPress={addGoalHandler} title='Add Goal' />
       </View>
       <View style={styles.listWrapper}>
-        <Text>List of all Goals</Text>
-        {courseGoals.map((courseGoal, index) => {
-          return (
-            <View key={index} style={styles.listItemStyles}>
-              <Text style={styles.listText}>{courseGoal}</Text>
-            </View>
-          );
-        })}
+        <ScrollView>
+          <Text>List of all Goals</Text>
+          {courseGoals.map((courseGoal, index) => {
+            return (
+              <View key={index} style={styles.listItemStyles}>
+                <Text style={styles.listText}>{courseGoal}</Text>
+              </View>
+            );
+          })}
+        </ScrollView>
       </View>
     </View>
   );
