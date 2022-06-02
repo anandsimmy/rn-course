@@ -34,7 +34,7 @@ const App = () => {
         <Button onPress={addGoalHandler} title='Add Goal' />
       </View>
       <View style={styles.listWrapper}>
-        <ScrollView>
+        <ScrollView alwaysBounceVertical={false}>
           <Text>List of all Goals</Text>
           {courseGoals.map((courseGoal, index) => {
             return (
