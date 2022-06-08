@@ -47,7 +47,6 @@ const App = () => {
               </View>
             );
           }}
-          bounceVertical={true}
         />
       </View>
     </View>
