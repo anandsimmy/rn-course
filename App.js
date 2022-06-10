@@ -1,5 +1,3 @@
-'use strict';
-
 import { useState } from 'react';
 import {
   StyleSheet,
@@ -48,6 +46,10 @@ const App = () => {
                 <Text style={styles.listText}>{itemData.item.text}</Text>
               </View>
             );
+          }}
+          alwaysBounceVertical={false}
+          keyExtractor={(item) => {
+            return item.key;
           }}
         />
       </View>
