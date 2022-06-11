@@ -14,7 +14,7 @@ const App = () => {
   const [courseGoals, setCourseGoals] = useState([]);
 
   const textInputHandler = (event) => {
-    setEnteredGoalText(event);
+    setEnteredGoalText(event.text);
   };
 
   const addGoalHandler = () => {
