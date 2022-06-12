@@ -5,7 +5,6 @@ import {
   View,
   Button,
   TextInput,
-  ScrollView,
   FlatList,
 } from 'react-native';
 
@@ -14,7 +13,7 @@ const App = () => {
   const [courseGoals, setCourseGoals] = useState([]);
 
   const textInputHandler = (event) => {
-    setEnteredGoalText(event.text);
+    setEnteredGoalText(event);
   };
 
   const addGoalHandler = () => {
