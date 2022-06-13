@@ -23,6 +23,7 @@ const App = () => {
         { text: enteredGoalText, key: Math.random().toString() },
       ];
     });
+    setEnteredGoalText('');
   };
 
   return (
@@ -32,6 +33,7 @@ const App = () => {
           style={styles.inputStyles}
           placeholder='Your goals'
           onChangeText={textInputHandler}
+          value={enteredGoalText}
         />
         <Button onPress={addGoalHandler} title='Add Goal' />
       </View>
