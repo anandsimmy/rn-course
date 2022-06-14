@@ -6,6 +6,7 @@ import {
   Button,
   TextInput,
   FlatList,
+  Pressable,
 } from 'react-native';
 
 const App = () => {
@@ -17,6 +18,7 @@ const App = () => {
   };
 
   const addGoalHandler = () => {
+    if (!enteredGoalText) return;
     setCourseGoals((currentGoals) => {
       return [
         ...currentGoals,
@@ -24,6 +26,14 @@ const App = () => {
       ];
     });
     setEnteredGoalText('');
+  };
+
+  const onPressFunction = (index) => {
+    console.log('pressed', index);
+    setCourseGoals((currentGoals) => {
+      currentGoals.splice(index, 1);
+      return [...currentGoals];
+    });
   };
 
   return (
@@ -43,9 +53,11 @@ const App = () => {
           data={courseGoals}
           renderItem={(itemData) => {
             return (
-              <View style={styles.listItemStyles}>
-                <Text style={styles.listText}>{itemData.item.text}</Text>
-              </View>
+              <Pressable onPress={() => onPressFunction(itemData.index)}>
+                <View style={styles.listItemStyles}>
+                  <Text style={styles.listText}>{itemData.item.text}</Text>
+                </View>
+              </Pressable>
             );
           }}
           alwaysBounceVertical={false}
