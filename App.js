@@ -51,9 +51,26 @@ const App = () => {
         onPress={() => setModalVisible(true)}
         color='#5e0acc'
       />
-
+      <Modal animationType='slide' visible={modalVisible}>
+        <View style={styles.modalWrapper}>
+          <View style={styles.inputWrapper}>
+            <TextInput
+              style={styles.inputStyles}
+              placeholder='Your goals'
+              onChangeText={textInputHandler}
+              value={enteredGoalText}
+            />
+            <Button onPress={addGoalHandler} title='Add Goal' />
+            <Button
+              onPress={() => setModalVisible(false)}
+              title='Close Modal'
+              color='red'
+            />
+          </View>
+        </View>
+      </Modal>
       <View style={styles.listWrapper}>
-        <Text>List of all Goals</Text>
+        <Text style={styles.listHeader}>List of all Goals</Text>
         <FlatList
           data={courseGoals}
           renderItem={(itemData) => {
@@ -81,8 +98,8 @@ const App = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    margin: 24,
-    marginTop: 48,
+    padding: 24,
+    paddingTop: 48,
   },
   modalWrapper: {
     flex: 1,
@@ -106,9 +123,14 @@ const styles = StyleSheet.create({
   listWrapper: {
     flex: 4,
   },
+  listHeader: {
+    paddingLeft: 2,
+    margin: 16,
+    marginHorizontal: 0,
+  },
   listItemStyles: {
     padding: 10,
-    margin: 6,
+    marginVertical: 6,
     borderRadius: 6,
     backgroundColor: '#5e0acc',
   },
