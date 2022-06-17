@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import {
   StyleSheet,
   Text,
@@ -8,12 +8,15 @@ import {
   FlatList,
   Pressable,
   Modal,
+  Image,
+  StatusBar,
 } from 'react-native';
 
 const App = () => {
   const [enteredGoalText, setEnteredGoalText] = useState('');
   const [modalVisible, setModalVisible] = useState(false);
   const [courseGoals, setCourseGoals] = useState([]);
+  const inputRef = useRef(null);
 
   const textInputHandler = (event) => {
     setEnteredGoalText(event);
@@ -51,14 +54,25 @@ const App = () => {
         onPress={() => setModalVisible(true)}
         color='#5e0acc'
       />
+
       <Modal animationType='slide' visible={modalVisible}>
         <View style={styles.modalWrapper}>
           <View style={styles.inputWrapper}>
+            <View style={styles.imageWrapper}>
+              <StatusBar backgroundColor='#5e0acc' />
+              <Image
+                style={styles.imageStyles}
+                source={require('./assets/images/goal.png')}
+              />
+            </View>
             <TextInput
               style={styles.inputStyles}
               placeholder='Your goals'
               onChangeText={textInputHandler}
               value={enteredGoalText}
+              placeholderTextColor='#120438'
+              ref={inputRef}
+              onLayout={() => inputRef.current.focus()}
             />
             <Button onPress={addGoalHandler} title='Add Goal' />
             <Button
@@ -99,26 +113,36 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 24,
-    paddingTop: 48,
   },
   modalWrapper: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     padding: 24,
+    backgroundColor: '#5e0acc',
+  },
+  imageWrapper: {
+    width: '100%',
+    flexDirection: 'row',
+    justifyContent: 'center',
+  },
+  imageStyles: {
+    height: 80,
+    width: 80,
   },
   inputWrapper: {
-    height: 200,
-    width: '100%',
+    height: 300,
+    width: '90%',
     justifyContent: 'space-between',
-    borderBottomWidth: 1,
-    borderBottomColor: '#ccc',
     margin: 8,
   },
   inputStyles: {
     borderWidth: 1,
-    borderColor: '#ccc',
-    padding: 8,
+    borderColor: '#fff',
+    backgroundColor: '#fff',
+    borderRadius: 6,
+    padding: 12,
+    color: '#120438',
   },
   listWrapper: {
     flex: 4,
@@ -127,6 +151,7 @@ const styles = StyleSheet.create({
     paddingLeft: 2,
     margin: 16,
     marginHorizontal: 0,
+    color: '#fff',
   },
   listItemStyles: {
     padding: 10,
