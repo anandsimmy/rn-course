@@ -9,9 +9,8 @@ import {
   Pressable,
   Modal,
   Image,
-  StatusBar,
 } from 'react-native';
-
+import { StatusBar } from 'expo-status-bar';
 const App = () => {
   const [enteredGoalText, setEnteredGoalText] = useState('');
   const [modalVisible, setModalVisible] = useState(false);
@@ -49,6 +48,7 @@ const App = () => {
 
   return (
     <View style={styles.container}>
+      <StatusBar style='light' />
       <Button
         title='Add New Goal'
         onPress={() => setModalVisible(true)}
@@ -59,7 +59,6 @@ const App = () => {
         <View style={styles.modalWrapper}>
           <View style={styles.inputWrapper}>
             <View style={styles.imageWrapper}>
-              <StatusBar backgroundColor='#5e0acc' />
               <Image
                 style={styles.imageStyles}
                 source={require('./assets/images/goal.png')}
@@ -113,6 +112,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 24,
+    paddingTop: 48,
   },
   modalWrapper: {
     flex: 1,
