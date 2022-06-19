@@ -52,7 +52,6 @@ const App = () => {
       <Button
         title='Add New Goal'
         onPress={() => setModalVisible(true)}
-        color='#5e0acc'
       />
 
       <Modal animationType='slide' visible={modalVisible}>
