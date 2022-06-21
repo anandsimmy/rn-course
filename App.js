@@ -35,10 +35,10 @@ const App = () => {
 
   const deleteGoalHandler = (id) => {
     console.log('pressed', id);
-    // setCourseGoals((currentGoals) => {
-    //   currentGoals.splice(index, 1);
-    //   return [...currentGoals];
-    // });
+    setCourseGoals((currentGoals) => {
+      currentGoals.splice(index, 1);
+      return [...currentGoals];
+    });
     setCourseGoals((currentGoals) => {
       return currentGoals.filter((currentGoal) => {
         return currentGoal.key !== id;
